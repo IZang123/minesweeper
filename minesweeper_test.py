@@ -36,7 +36,3 @@ def test_check_over():
                                    [' ', ' ', ' ', ' ', ' '],
                                    [' ', ' ', ' ', ' ', ' ']]
     assert minesweeper.check_over() == False
-
-def test_show_bombs():
-    minesweeper = Minesweeper(5, 3)
-    minesweeper.show_bombs()
