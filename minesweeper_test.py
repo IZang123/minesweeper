@@ -28,6 +28,13 @@ def test_nbors():
     minesweeper.vis = []  # Reset vis
     minesweeper.nbors(1, 1)
 
+    # После выполнения nbors, ожидается, что в vis будут все посещенные ячейки
+    expected_visited_cells = [[1, 1], [0, 0], [0, 1], [0, 2], [1, 0], [1, 2], [2, 0], [2, 1], [2, 2]]
+    
+    # Проверяем, что все посещенные ячейки присутствуют в vis
+    for cell in expected_visited_cells:
+        assert cell in minesweeper.vis
+
 def test_check_over():
     minesweeper = Minesweeper(5, 3)
     minesweeper.values_of_bombs = [['M', ' ', ' ', ' ', ' '],
